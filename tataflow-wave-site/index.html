@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智能美體循環儀｜TATA FLOW 塔塔流</title>
+  <meta name="description" content="ageLOC 智能美體循環儀一頁式介紹，整合科技、微電流、循環美學、科研數據與購買方式。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700;900&family=Noto+Sans+TC:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue-deep: #28466e;
+      --blue-mid: #4f6f9f;
+      --gold: #b89659;
+      --text: #253856;
+      --muted: #667896;
+      --shadow: 0 24px 70px rgba(40, 70, 110, .16);
+      --max-text: 1120px;
+      --max-img: 920px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; background: #eaf1fb; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Noto Serif TC", "Songti TC", "PingFang TC", "Microsoft JhengHei", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -8%, rgba(255,255,255,.98) 0 12%, rgba(191,212,239,.36) 13% 32%, transparent 33%),
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.86), transparent 24%),
+        radial-gradient(circle at 85% 4%, rgba(179,203,234,.45), transparent 22%),
+        linear-gradient(180deg, #eaf1fb 0%, #f7faff 42%, #e8f0fa 100%);
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; height: auto; image-rendering: auto; }
+
+    /* ---------- 表頭 ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+      background: rgba(236, 244, 253, .78);
+      border-bottom: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 12px 32px rgba(40,70,110,.08);
+    }
+    .topbar-inner {
+      width: min(var(--max-text), calc(100% - 36px));
+      height: 72px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px;
+      color: var(--blue-deep); letter-spacing: .18em; font-weight: 700;
+      font-size: 15px; white-space: nowrap;
+    }
+    .nav {
+      display: flex; gap: 8px; align-items: center;
+      color: var(--blue-mid); font-size: 14px; letter-spacing: .08em;
+    }
+    .nav a {
+      padding: 8px 12px; border-radius: 999px;
+      background: rgba(255,255,255,.34); border: 1px solid transparent;
+    }
+    .nav a:hover { border-color: rgba(80, 112, 158, .2); background: rgba(255,255,255,.72); }
+
+    /* ---------- Hero 文字 ---------- */
+    .hero-copy {
+      width: min(var(--max-text), calc(100% - 36px));
+      margin: 0 auto; padding: 58px 0 24px; text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 16px;
+      color: var(--blue-deep); letter-spacing: .42em; font-size: 15px; font-weight: 700;
+      margin-bottom: 20px; opacity: .92;
+    }
+    .eyebrow::before, .eyebrow::after {
+      content: ""; width: 92px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(40,70,110,.34), transparent);
+    }
+    h1 {
+      color: var(--blue-deep); font-size: clamp(42px, 6.5vw, 82px);
+      line-height: 1.08; letter-spacing: .06em; font-weight: 700;
+      text-shadow: 0 6px 28px rgba(255,255,255,.94); margin-bottom: 18px;
+    }
+    .hero-copy p {
+      max-width: 760px; margin: 0 auto 28px;
+      color: var(--blue-mid); font-size: clamp(17px, 2.1vw, 22px); letter-spacing: .08em;
+    }
+    .hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+    /* ---------- 按鈕 ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 54px; padding: 14px 24px; border-radius: 999px;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      font-weight: 800; letter-spacing: .08em;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      border: 1px solid rgba(255,255,255,.72); cursor: pointer; text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 18px 38px rgba(40,70,110,.18); }
+    .btn-primary { color: white; background: linear-gradient(135deg, #29476f, #5f80b0); box-shadow: 0 16px 34px rgba(40,70,110,.22); }
+    .btn-secondary { color: var(--blue-deep); background: rgba(255,255,255,.76); box-shadow: inset 0 0 20px rgba(255,255,255,.62); }
+    .btn-gold { color: white; background: linear-gradient(135deg, #9f7a3f, #c6a15e); box-shadow: 0 16px 34px rgba(184,150,89,.24); }
+    .btn-soft { color: var(--blue-deep); background: rgba(255,255,255,.78); }
+    .btn-line { color: #fff; background: linear-gradient(135deg, #06C755, #04a948); box-shadow: 0 16px 34px rgba(6,199,85,.26); min-width: 280px; }
+
+    .contact { width: min(var(--max-text), calc(100% - 36px)); margin: 0 auto 54px; text-align: center; }
+    .contact p { color: var(--blue-mid); font-size: 18px; letter-spacing: .1em; margin-bottom: 16px; }
+
+    /* ---------- 圖片卡 ---------- */
+    .page-wrap { width: min(var(--max-img), calc(100% - 28px)); margin: 0 auto; }
+    .image-section { padding: 14px 0; opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .image-section.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .image-section { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+    .image-card {
+      overflow: hidden; border-radius: 34px;
+      border: 1px solid rgba(255,255,255,.86);
+      background: linear-gradient(145deg, rgba(255,255,255,.64), rgba(222,234,249,.52));
+      box-shadow: var(--shadow), inset 0 0 36px rgba(255,255,255,.58);
+    }
+    .image-card img { border-radius: 32px; }
+
+    /* ---------- 分隔 ---------- */
+    .divider {
+      width: min(var(--max-text), calc(100% - 36px));
+      margin: 54px auto 0; display: flex; align-items: center; justify-content: center;
+      gap: 18px; color: var(--gold); opacity: .92; letter-spacing: .28em; font-size: 20px;
+    }
+    .divider::before, .divider::after {
+      content: ""; flex: 1; max-width: 300px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(86,112,150,.36), transparent);
+    }
+
+    /* ---------- 購買方式 ---------- */
+    .purchase {
+      width: min(var(--max-text), calc(100% - 36px));
+      margin: 22px auto 72px; padding: 58px 36px 40px; border-radius: 42px;
+      border: 1px solid rgba(255,255,255,.82);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(255,255,255,.95), transparent 40%),
+        linear-gradient(160deg, rgba(255,255,255,.74), rgba(218,231,248,.76));
+      box-shadow: 0 28px 80px rgba(40,70,110,.16), inset 0 0 44px rgba(255,255,255,.52);
+      position: relative; overflow: hidden;
+    }
+    .purchase-head { text-align: center; margin-bottom: 32px; }
+    .purchase-kicker { color: var(--blue-mid); letter-spacing: .34em; font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+    .purchase h2 { color: var(--blue-deep); font-size: clamp(34px, 5vw, 58px); line-height: 1.15; letter-spacing: .12em; margin-bottom: 12px; }
+    .purchase-head p { color: var(--muted); font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 17px; letter-spacing: .04em; }
+
+    .purchase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    .purchase-card {
+      min-height: 100%; padding: 28px; border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.82);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(241,246,253,.78));
+      box-shadow: 0 18px 44px rgba(40,70,110,.11), inset 0 0 22px rgba(255,255,255,.5);
+      display: flex; flex-direction: column;
+    }
+    .purchase-card.featured { background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(242,237,225,.82)); border-color: rgba(184,150,89,.36); }
+    .pill {
+      display: inline-flex; width: fit-content; margin-bottom: 16px; padding: 7px 13px; border-radius: 999px;
+      background: rgba(79,111,159,.12); color: var(--blue-deep);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .08em;
+    }
+    .featured .pill { color: #8e6d38; background: rgba(184,150,89,.15); }
+    .purchase-card h3 { color: var(--blue-deep); font-size: 26px; line-height: 1.28; margin-bottom: 10px; letter-spacing: .06em; }
+    .purchase-card p, .purchase-card li { color: var(--muted); font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; letter-spacing: .03em; }
+    .purchase-card ul { list-style: none; display: grid; gap: 12px; margin: 18px 0 18px; }
+    .purchase-card li { position: relative; padding-left: 24px; font-size: 15px; }
+    .purchase-card li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); font-weight: 800; font-size: 13px; top: 2px; }
+    .li-main { display: block; color: var(--text); font-weight: 700; letter-spacing: .02em; }
+    .li-sub { display: block; color: var(--muted); font-size: 13px; line-height: 1.6; margin-top: 2px; }
+    .card-foot { margin: 4px 0 22px; color: var(--muted); font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 14px; line-height: 1.7; }
+    .purchase-actions { display: grid; gap: 10px; margin-top: auto; }
+    .purchase-actions .btn { width: 100%; min-height: 52px; font-size: 14px; padding-inline: 18px; }
+    .note { margin-top: 14px; color: #7a89a0; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 13px; line-height: 1.7; }
+
+    .footer { text-align: center; padding: 30px 18px 44px; color: #7a89a0; font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif; font-size: 13px; letter-spacing: .03em; }
+
+    .mobile-cta { display: none; position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 60; box-shadow: 0 18px 44px rgba(40,70,110,.28); }
+
+    @media (max-width: 980px) {
+      .purchase-grid { grid-template-columns: 1fr; }
+      .nav { display: none; }
+      .purchase { padding-inline: 22px; }
+    }
+    @media (max-width: 640px) {
+      .topbar-inner, .hero-copy, .page-wrap, .purchase { width: calc(100% - 18px); }
+      .topbar-inner { height: 62px; }
+      .brand { font-size: 13px; letter-spacing: .1em; }
+      .hero-copy { padding-top: 40px; }
+      .eyebrow { letter-spacing: .18em; font-size: 12px; }
+      .eyebrow::before, .eyebrow::after { width: 34px; }
+      h1 { font-size: 38px; letter-spacing: .04em; }
+      .hero-copy p { font-size: 16px; letter-spacing: .04em; }
+      .hero-actions .btn { width: 100%; }
+      .image-section { padding: 7px 0; }
+      .image-card, .image-card img { border-radius: 18px; }
+      .purchase { margin-top: 14px; border-radius: 28px; padding: 40px 16px 24px; }
+      .purchase h2 { font-size: 34px; letter-spacing: .05em; }
+      .purchase-card { padding: 22px; }
+      .purchase-card h3 { font-size: 23px; }
+      .mobile-cta { display: inline-flex; }
+      body { padding-bottom: 84px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top" aria-label="回到頁面頂部">
+        <span>智能美體循環儀</span>
+      </a>
+      <nav class="nav" aria-label="頁面導覽">
+        <a href="#section-2">核心科技</a>
+        <a href="#section-4">搭配保養</a>
+        <a href="#section-7">科研數據</a>
+        <a href="#purchase">購買方式</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero-copy">
+      <div class="eyebrow">科技 × 微電流 × 循環美學</div>
+      <h1>智能美體循環儀</h1>
+      <p>把居家循環保養，變成更容易持續的日常儀式</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#purchase">選擇購買方式</a>
+        <a class="btn btn-secondary" href="#section-2">先了解核心科技</a>
+      </div>
+    </section>
+
+    <div class="page-wrap">
+      <section class="image-section" id="section-1" aria-label="智能美體循環儀主視覺">
+        <div class="image-card"><img src="slide-01.png" alt="智能美體循環儀主視覺" fetchpriority="high" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-2" aria-label="核心科技：雙向脈衝波形與智慧微電流">
+        <div class="image-card"><img src="slide-02.png" alt="核心科技：雙向脈衝波形與智慧微電流" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-3" aria-label="核心科技：波浪型金屬導頭與人體工學設計">
+        <div class="image-card"><img src="slide-03.png" alt="核心科技：波浪型金屬導頭與人體工學設計" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-4" aria-label="為什麼要搭配兩款膠">
+        <div class="image-card"><img src="slide-04.png" alt="為什麼要搭配兩款膠" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-5" aria-label="WaveiO 舒活平衡凝膠 關鍵成分">
+        <div class="image-card"><img src="slide-05.png" alt="WaveiO 舒活平衡凝膠 關鍵成分" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-6" aria-label="WaveiO 美體緊緻精華 緊緻科技成分">
+        <div class="image-card"><img src="slide-06.png" alt="WaveiO 美體緊緻精華 緊緻科技成分" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-7" aria-label="科研數據：紅外線熱影像技術">
+        <div class="image-card"><img src="slide-07.png" alt="科研數據：紅外線熱影像技術" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-8" aria-label="科研數據：一次使用後微循環明顯提升">
+        <div class="image-card"><img src="slide-08.png" alt="科研數據：一次使用後微循環明顯提升" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-9" aria-label="科研數據：循環提升與肌膚密度增加">
+        <div class="image-card"><img src="slide-09.png" alt="科研數據：循環提升與肌膚密度增加" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-10" aria-label="科研數據：VivaScope 膠原蛋白密度提升">
+        <div class="image-card"><img src="slide-10.png" alt="科研數據：VivaScope 膠原蛋白密度提升" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-11" aria-label="三種日常保養情境">
+        <div class="image-card"><img src="slide-11.png" alt="三種日常保養情境" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-12" aria-label="科研數據：12 週真實使用驗證">
+        <div class="image-card"><img src="slide-12.png" alt="科研數據：12 週真實使用驗證" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-13" aria-label="哪些人特別適合使用">
+        <div class="image-card"><img src="slide-13.png" alt="哪些人特別適合使用" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-14" aria-label="為什麼值得入手">
+        <div class="image-card"><img src="slide-14.png" alt="為什麼值得入手" loading="lazy" decoding="async" /></div>
+      </section>
+      <section class="image-section" id="section-15" aria-label="智慧體驗：VERA App 引導">
+        <div class="image-card"><img src="slide-15.png" alt="智慧體驗：VERA App 引導" loading="lazy" decoding="async" /></div>
+      </section>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="purchase" id="purchase" aria-label="購買方式">
+      <div class="purchase-head">
+        <div class="purchase-kicker">ORDER GUIDE</div>
+        <h2>選擇妳的購買方式</h2>
+        <p>依照付款習慣、會員回饋與分期需求，選擇最適合妳的入口</p>
+      </div>
+
+      <div class="purchase-grid">
+        <article class="purchase-card">
+          <span class="pill">最快下單</span>
+          <h3>7-11 賣貨便直接下單</h3>
+          <p>適合想單純購買的你</p>
+          <ul>
+            <li><span class="li-main">超商取貨付款</span><span class="li-sub">到超商取貨時再付款，不用先刷卡</span></li>
+            <li><span class="li-main">信用卡刷卡</span><span class="li-sub">線上直接刷卡結帳、超商取貨</span></li>
+          </ul>
+          <div class="purchase-actions">
+            <a class="btn btn-primary" href="https://myship.7-11.com.tw/general/detail/GM2606251719361" target="_blank" rel="noopener">前往賣貨便直接購買</a>
+          </div>
+          <div class="note">※ 限超取，無法宅配</div>
+        </article>
+
+        <article class="purchase-card featured">
+          <span class="pill">累積回饋</span>
+          <h3>如新入會購買</h3>
+          <p>這筆消費可額外累積 6% 現金回饋，可折抵下筆訂單使用</p>
+          <ul>
+            <li><span class="li-main">信用卡刷卡一次付清</span></li>
+            <li><span class="li-main">刷卡分期 0 利率（3／6 期）</span><span class="li-sub">限星展、富邦、台新、中信、玉山、永豐、國泰銀行</span></li>
+            <li><span class="li-main">可超取、可宅配</span></li>
+          </ul>
+          <div class="card-foot">適合未來想跟著塔塔體驗其他如新產品的妳</div>
+          <div class="purchase-actions">
+            <a class="btn btn-gold" href="https://www.nuskin.com.tw/nuskin-tw-trade-application/api/v1/trans/1IFmRwTTMUv" target="_blank" rel="noopener">前往如新入會購買</a>
+          </div>
+        </article>
+
+        <article class="purchase-card">
+          <span class="pill">分期購買</span>
+          <h3>不入會 純分期</h3>
+          <p>適合想降低一次付款壓力，用分期方式入手的妳，分有卡與無卡兩種</p>
+          <ul>
+            <li><span class="li-main">有信用卡（0 利率）</span><span class="li-sub">透過 PayNow 系統刷卡分期（3／6 期）</span></li>
+            <li><span class="li-main">無信用卡（低利率）</span><span class="li-sub">透過中租申請無卡分期</span></li>
+          </ul>
+          <div class="purchase-actions">
+            <a class="btn btn-line" href="https://lin.ee/pKqyPPo" target="_blank" rel="noopener">私訊塔塔申請開通</a>
+          </div>
+          <div class="note">※ 需另外提供塔塔寄送資訊（郵寄、超取皆可）</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <a class="btn btn-primary mobile-cta" href="#purchase">選擇購買方式</a>
+
+  <section class="contact" aria-label="聯絡塔塔">
+    <p>任何問題，都可以直接問塔塔</p>
+    <a class="btn btn-line" href="https://lin.ee/pKqyPPo" target="_blank" rel="noopener">私訊塔塔官方 LINE</a>
+  </section>
+
+  <footer class="footer">
+    <p>© TATA FLOW 塔塔流｜智能美體循環儀。本頁內容為日常保養、居家 SPA 與體態管理資訊，非醫療診斷、治療或療效保證</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: .08, rootMargin: "0px 0px -30px 0px" });
+    document.querySelectorAll('.image-section').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
